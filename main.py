@@ -77,3 +77,4 @@ async def fetch_data(request: dict):
         "message": "Data adapter not yet implemented. Awaiting API keys and implementation.",
         "status_code": 501
     }
+    
