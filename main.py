@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
+from app.api import router as api_router
 
 app = FastAPI(
     title="Trading Bot API",
@@ -16,6 +17,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include API routes for v1/v2 model orchestration
+app.include_router(api_router)
 
 @app.get("/")
 async def root():
